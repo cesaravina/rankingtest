@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Rankings</title>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+   <link rel="stylesheet" type="text/css" href="./css/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+</head>
+<body>
+
+<div class="head">
+    <div class="header"></div>
+    <h1 id="title">{Random.Ranking()}</h1>
+</div>
+
+
+
+
+<div class="container header_ranking">
+
+  <div class="row">
+
+  <div class="col-lg-12">
+    <h2 id="sub_title">All Rankings</h2>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <button id="newRanking">ADD RANKING</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="container ranking_view"></div>
+
+<footer><p>Made with <span class="glyphicon glyphicon-heart">  </span> by Guillermo, Cesar and Samson</p></footer>
+
+<!--modal-->
+<div class="modal fade">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a Ranking</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div id="thanks">
+        <img src="./img/thanks.gif">
+      </div>
+        <form class="form-horizontal" id="form">
+          <div class="form-group">
+            <label for="inputName" class="col-sm-2 control-label">Subject</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputName" placeholder="Text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputURL" class="col-sm-2 control-label">Image URL</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputURL" placeholder="Text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputTopic" class="col-sm-2 control-label">Topic</label>
+            <div class="col-sm-10">
+            <select class="form-control" id="inputTopic">
+              <option>Food</option>
+              <option>People</option>
+              <option>Places</option>
+              <option>Games</option>
+              <option>Tech</option>
+            </select>
+          </div>  
+
+      </div>
+      <div class="modal-footer">
+                <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default" id="submitButton">Submit</button>
+            </div>
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="./js/index.js"></script>
+</body>
+</html>

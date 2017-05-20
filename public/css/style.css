@@ -1,0 +1,156 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html{
+	font-family: 'Roboto', sans-serif;
+}
+
+.header{
+		
+		height: 730px;
+		min-width: 100%
+		min-height:100%;
+		max-height: 100%;
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+
+
+
+}
+
+#title{
+	text-align: center;
+	color:#ffffff;
+	font-size: 8em;
+	font-family: 'Roboto', sans-serif;
+	position: absolute;
+	top:300px;
+	background-color: #DADAD8; 
+	width: 100%;
+
+
+}
+
+#back{
+	font-size: 1em;
+	font-family: 'Roboto', sans-serif;
+	padding-top: 10px;
+	padding-left: 10px;
+	margin: 10px;
+}
+
+#sub_title{
+	text-align: center;
+	margin-top: 20px;
+	font-size: 3em;
+	font-weight: bold
+}
+
+.item{
+
+	margin-top: 40px;
+	font-size: 3em;
+	font-weight: bold
+}
+
+.itemRow{
+	margin-top: 30px;
+	border-bottom: #E6E7E8 solid 2px;
+	padding-bottom: 10px;
+}
+
+.ranking{
+	float: left;
+	padding:20px;
+
+}
+
+.btn-group{
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.placeholder{
+	height: 300px;
+	width: 250px;
+	background-color: #e6e7e8;
+	border-radius: 10px;
+	margin-right: 10px;
+	display:inline-block;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+#newRanking{
+	height: 50px;
+	width: 100%;
+	background-color: #e6e7e8;
+	border-radius: 10px;
+	margin-right: 10px;
+	display:inline-block;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border: none;
+	color:#ffffff;
+	font-weight: bold
+}
+
+.ranking_image {
+    max-height: 70%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+ #thanks{
+ 	max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    text-align: center;
+ }
+
+.itemImage{
+	border-radius: 1000px;
+	width: 150px;
+	height: 150px;
+}
+
+.voteBtn{
+	width: 50px;
+	height: 50px;
+	float: right;
+	margin-top:15px;
+
+}
+
+footer{
+	text-align: center;
+	height: 100px;
+	background-color: #272823;
+	color: #ffffff;
+	margin-top: 50px;
+	border-top:solid black 1px;
+
+}
+
+footer>p{
+	margin-top: 40px;
+}
+
+.ranking_view{
+	align-items: center;
+	display: flex;
+	flex-wrap:wrap;
+}
