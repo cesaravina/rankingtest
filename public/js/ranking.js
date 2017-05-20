@@ -34,6 +34,18 @@ function handleSubmit(event){
     if (!newItemForm.val().trim().trim() || !newImageForm.val().trim().trim()) {
       return;
     }
+    if(!validateURL(newImageForm.val().trim())){
+
+    postItem({
+      name: newItemForm
+        .val()
+        .trim(),
+      imgURL: "http://pmdvod.nationalgeographic.com/NG_Video/960/211/moon-101-nasa_640x360_808580163611.jpg",
+      score: 0, 
+      TopicId: res
+    });
+
+    }else{
     // Calling the upsertAuthor function and passing in the value of the name input
     postItem({
       name: newItemForm
@@ -45,6 +57,7 @@ function handleSubmit(event){
       score: 0, 
       TopicId: res
     });
+    }
   }
 
 function postItem(itemData){
@@ -106,42 +119,34 @@ var TopButton = $("<button>");
 TopButton.addClass("voteBtn btn btn-success");
 TopButton.text("+1");
 
-//TopButton.on('click', function (){
-//
-//	$.ajax({
-//		url: '/api/items',
-//		method: "PUT",
-//		where: {
-//			id:itemData.id
-//		},
-//		success: function (){
-//			console.log("it worked!")
-//		}
-//	});
-//});
+TopButton.on("click", function(){
+	$.ajax({
+   url: 'api/items/increment/' + itemData.id + '/1',
+   type: 'PUT',
+   success: function(response) {
+     console.log("it worked");
+   }
+});
+})
+
 
 var newBottomButton = $("<div>");
 newBottomButton.addClass("row")
 var BottomButton = $("<button>");
 BottomButton.addClass("voteBtn btn btn-danger");
 
-
-
-//BottomButton.on('click', function (){
-//	$.ajax({
-//		url: '/api/items',
-//		method: "PUT",
-//		where:{
-//			id:itemData.id
-//		},
-//		success: function (){
-//			console.log("it worked!")
-//		}
-//	});
-//});
-
-
 BottomButton.text("-1");
+
+BottomButton.on("click", function(){
+	$.ajax({
+   url: 'api/items/decrement/'  + itemData.id + '/1',
+   type: 'PUT',
+   success: function(err, response) {
+   		// if (err) throw err;
+     console.log("it worked");
+   }
+});
+})
 
 
 newImageCol.append(newImage);
@@ -192,6 +197,10 @@ function rankingDesign(){
 };
 
 
+function validateURL(textval) {
+    var urlregex = /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
+    return urlregex.test(textval);
+}
 
 
 
@@ -200,4 +209,5 @@ function rankingDesign(){
 
 //add on click functions that link the buttons th the database
 //window.location!!
+
 
